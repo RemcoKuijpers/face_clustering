@@ -1,1 +1,1 @@
-# face_clustering
+# Welcome to the face_clustering package!
