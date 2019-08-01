@@ -66,7 +66,7 @@ while True:
     faces = faceCascade.detectMultiScale( 
         gray,
         scaleFactor = 1.2,
-        minNeighbors = 9,
+        minNeighbors = 6,
         minSize = (int(minW), int(minH)),
        )
 
@@ -88,7 +88,7 @@ while True:
             id = "onbekend"
             confidence = "  {0}%".format(round(100 - confidence))
             newFace += 1
-            if newFace >= 3:
+            if newFace >= 8:
                 if s.saveFace(idTotal, cam) == True:
                     newFace = 0
                     if t.trainNewFaces() == True:
@@ -96,7 +96,7 @@ while True:
                         recognizer.read('face_recognition/trainer/trainer.yml')
                         print("[INFO] New training data loaded.")
         
-        cv2.putText(img, "ID: %s"%str(id), (x+5,y-5), font, 1, (255,255,255), 2)
+        #cv2.putText(img, "ID: %s"%str(id), (x+5,y-5), font, 1, (255,255,255), 2)
         cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
     
     if writer is not None:
