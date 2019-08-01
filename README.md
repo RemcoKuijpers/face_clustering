@@ -36,14 +36,14 @@ python face_recognition/faceRecognition.py
 This codes fills the database for the clustering. The code uses OpenCV haarcascades to detect faces. When a face is detected it takes images and saves it into the database.
 
 ### Chinese Whispers
-To use the Chinese Whispers clustering method, you'll need to run the runChineseWhispersClustering.sh shell script.
+To use the Chinese Whispers clustering method, you'll need to run the [runChineseWhispersClustering.sh](https://github.com/RemcoKuijpers/face_clustering/blob/master/runChineseWhispersClustering.sh) shell script.
 ```
 ./runChineseWhispersClustering.sh
 ```
 This program saves one image of each unique face that's detected.
 
 ### DBSCAN
-To use the DBSCAN clustering method, you'll need to run the runDBSCANClustering.sh shell script.
+To use the DBSCAN clustering method, you'll need to run the [runDBSCANClustering.sh](https://github.com/RemcoKuijpers/face_clustering/blob/master/runDBSCANClustering.sh) shell script.
 ```
 ./runDBSCANClustering.sh
 ```
