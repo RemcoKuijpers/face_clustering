@@ -40,7 +40,7 @@ To use the Chinese Whispers clustering method, you'll need to run the [runChines
 ```
 ./runChineseWhispersClustering.sh
 ```
-This program saves one image of each unique face that's detected.
+This program saves one image of each unique face that's detected, in the [output_folder](https://github.com/RemcoKuijpers/face_clustering/tree/master/output_folder) folder.
 
 ### DBSCAN
 To use the DBSCAN clustering method, you'll need to run the [runDBSCANClustering.sh](https://github.com/RemcoKuijpers/face_clustering/blob/master/runDBSCANClustering.sh) shell script.
