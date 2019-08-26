@@ -1,4 +1,7 @@
 # Welcome to the face_clustering package!
+In this README is explained how to get the project running. In the [wiki](https://github.com/RemcoKuijpers/face_clustering/wiki) is eplained how the project works.
+
+## Introduction
 With this package it's possible to do realtime face clustering!
 With this project it's possible to do face clustering using chinese whisps clustering.
 
