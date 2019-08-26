@@ -1,8 +1,7 @@
 # Welcome to the face_clustering package!
 With this package it's possible to do realtime face clustering!
-With this project it's possible to choose from two kinds of clustering methods:
-* [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN)
-* [Chinese Whispers](https://en.wikipedia.org/wiki/Chinese_Whispers_(clustering_method))
+With this project it's possible to do face clustering using chinese whisps clustering.
+[Chinese Whispers](https://en.wikipedia.org/wiki/Chinese_Whispers_(clustering_method))
 
 ## Getting started
 In this chapter is explained how to get the project up and running. The project is tested on Ubuntu 16.04.
@@ -41,10 +40,3 @@ To use the Chinese Whispers clustering method, you'll need to run the [runChines
 ./runChineseWhispersClustering.sh
 ```
 This program saves one image of each unique face that's detected, in the [output_folder](https://github.com/RemcoKuijpers/face_clustering/tree/master/output_folder) folder.
-
-### DBSCAN
-To use the DBSCAN clustering method, you'll need to run the [runDBSCANClustering.sh](https://github.com/RemcoKuijpers/face_clustering/blob/master/runDBSCANClustering.sh) shell script.
-```
-./runDBSCANClustering.sh
-```
-This program ouputs a montage image for each unique face that's detected.
