@@ -29,7 +29,7 @@ git clone https://github.com/RemcoKuijpers/face_clustering.git
 You'll need to change the paths in the code, so they will match with your system.
 
 ## Run project
-To run the project you'll need to run two programs. The fisrt program that's need to run first is the [faceRecognition.py](https://github.com/RemcoKuijpers/face_clustering/blob/master/face_recognition/faceRecognition.py) file.
+To run the project you'll need to run two programs. The fisrt program that's need to run first is the [faceRecognition.py](https://github.com/RemcoKuijpers/face_clustering/blob/master/face_recognition/faceRecognition.py) file. If you don't have a "dataset" folder and a "output_folder", create them.
 ```
 python face_recognition/faceRecognition.py
 ```
