@@ -1,6 +1,7 @@
 # Welcome to the face_clustering package!
 With this package it's possible to do realtime face clustering!
 With this project it's possible to do face clustering using chinese whisps clustering.
+
 [Chinese Whispers](https://en.wikipedia.org/wiki/Chinese_Whispers_(clustering_method))
 
 ## Getting started
