@@ -4,6 +4,7 @@ import sys
 import os
 import dlib
 import glob
+import shutil
 
 predictor_path = sys.argv[1]
 face_rec_model_path = sys.argv[2]
@@ -40,5 +41,14 @@ print("Saving unique faces to output_folder...")
 for index in range(len(labels)):
     labels[index] = int(labels[index])
     img, shape = images[index]
-    file_path = os.path.join(output_folder_path, "face_" + str(labels[index]))
+    file_path = os.path.join(output_folder_path, "face." + str(labels[index]))
     dlib.save_face_chip(img, shape, file_path, size=150, padding=0.25)
+
+for i in glob.glob(os.path.join(faces_folder_path, "*.jpg")):
+    os.remove(i)
+
+files_to_move = os.listdir(output_folder_path)
+for files in files_to_move:
+    file_name = os.path.join(output_folder_path, files)
+    if os.path.isfile(file_name):
+        shutil.copy(file_name, faces_folder_path)

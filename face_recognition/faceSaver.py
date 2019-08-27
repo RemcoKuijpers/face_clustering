@@ -3,7 +3,7 @@ import os
 
 class FaceSaver():
     def __init__(self):
-        print("[INFO] FaceSaver started.")
+        print("FaceSaver started.")
 
     def saveFace(self, faceID, cam):
         #cam = cv2.VideoCapture("http://192.168.70.133:4747/video")
@@ -29,9 +29,9 @@ class FaceSaver():
             if k == 27:
                 cam.release()
                 cv2.destroyAllWindows()
-                print("[INFO] Program has stopped.")
+                print("Program has stopped.")
                 break
             elif self.count >= 10:
-                print("[INFO] Face saved.")
+                print("Face saved.")
                 return True
                 break

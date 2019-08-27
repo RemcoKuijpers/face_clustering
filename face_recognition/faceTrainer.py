@@ -7,7 +7,7 @@ class FaceTrainer():
     def __init__(self):
         self.recognizer = cv2.face.LBPHFaceRecognizer_create()
         self.detector = cv2.CascadeClassifier("face_recognition/haarcascade_frontalface_default.xml")
-        print("[INFO] FaceTrainer started.")
+        print("FaceTrainer started.")
 
     def getImagesAndLabels(self, path):
         path = '/home/remco/Projects/face_clustering/dataset'
@@ -30,10 +30,10 @@ class FaceTrainer():
         return faceSamples,ids
 
     def trainNewFaces(self):
-        print("[INFO] Training new faces ...")
+        print("Training new faces ...")
         path = '/home/remco/Projects/face_clustering/dataset'
         faces,ids = self.getImagesAndLabels(path)
         self.recognizer.train(faces, np.array(ids))
         self.recognizer.write('face_recognition/trainer/trainer.yml')
-        print("\n [INFO] {0} faces trained.".format(len(np.unique(ids))))
+        print("\n {0} faces trained.".format(len(np.unique(ids))))
         return True

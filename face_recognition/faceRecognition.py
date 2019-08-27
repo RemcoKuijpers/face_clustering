@@ -22,7 +22,7 @@ id = 0
 newFace = 0
 writer = None
 
-cam = cv2.VideoCapture("http://192.168.70.133:4747/video")
+cam = cv2.VideoCapture("http://192.168.70.195:4747/video")
 cam.set(3, 50)
 cam.set(4, 50)
 
@@ -34,13 +34,13 @@ with open('face_recognition/trainer/trainer.yml') as trainerFile:
         trainerFile = yaml.load(trainerFile)
         trainerFile = {} if trainerFile is None else trainerFile
         if trainerFile == {}:
-            print('[INFO] Trainer file is emppty. Going to save first face ...')
+            print('Trainer file is emppty. Going to save first face ...')
             if s.saveFace(1, cam) == True:
                 if t.trainNewFaces() == True:
                     recognizer = cv2.face.LBPHFaceRecognizer_create()
                     recognizer.read('face_recognition/trainer/trainer.yml')
                     idTotal = 1
-                    print("[INFO] New training data loaded.")
+                    print("New training data loaded.")
         else:
             _, totalIds = t.getImagesAndLabels('/home/remco/Projects/face_clustering/dataset')
             idTotal = totalIds[-1] + 1
@@ -94,7 +94,7 @@ while True:
                     if t.trainNewFaces() == True:
                         idTotal += 1
                         recognizer.read('face_recognition/trainer/trainer.yml')
-                        print("[INFO] New training data loaded.")
+                        print("New training data loaded.")
         
         #cv2.putText(img, "ID: %s"%str(id), (x+5,y-5), font, 1, (255,255,255), 2)
         cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
@@ -108,7 +108,7 @@ while True:
     if k == 27:
         break
 
-print("[INFO] Exiting program.")
+print("Exiting program.")
 
 if writer is not None:
     writer.release()
