@@ -35,7 +35,7 @@ labels = dlib.chinese_whispers_clustering(descriptors, 0.5)
 num_classes = len(set(labels))
 print("Number of unique faces: {}".format(num_classes))
 
-print("Saving faces in largest cluster to output folder...")
+print("Saving unique faces to output_folder...")
 
 for index in range(len(labels)):
     labels[index] = int(labels[index])
