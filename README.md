@@ -1,6 +1,10 @@
 # Welcome to the face_clustering package!
+In this README is explained how to get the project running. In the [wiki](https://github.com/RemcoKuijpers/face_clustering/wiki) is eplained how the project works.
+
+## Introduction
 With this package it's possible to do realtime face clustering!
 With this project it's possible to do face clustering using chinese whisps clustering.
+
 [Chinese Whispers](https://en.wikipedia.org/wiki/Chinese_Whispers_(clustering_method))
 
 ## Getting started
@@ -25,7 +29,7 @@ To install the project on your own computer you just need to clone this reposito
 ```
 git clone https://github.com/RemcoKuijpers/face_clustering.git
 ```
-You'll need to change the paths in the code, so they will match with your system.
+You'll need to change the paths in the code, so they will match with your system. You also need two empty directories in the face_clustering repository. One is named 'dataset' and the other one is named 'output_folder'.
 
 ## Run project
 To run the project you'll need to run two programs. The fisrt program that's need to run first is the [faceRecognition.py](https://github.com/RemcoKuijpers/face_clustering/blob/master/face_recognition/faceRecognition.py) file. If you don't have a "dataset" folder and a "output_folder", create them.
