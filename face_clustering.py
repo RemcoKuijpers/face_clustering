@@ -52,5 +52,3 @@ for files in files_to_move:
     file_name = os.path.join(output_folder_path, files)
     if os.path.isfile(file_name):
         shutil.copy(file_name, faces_folder_path)
-
-#Test
