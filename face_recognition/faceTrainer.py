@@ -10,7 +10,7 @@ class FaceTrainer():
         print("FaceTrainer started.")
 
     def getImagesAndLabels(self, path):
-        path = '/home/remco/Projects/face_clustering/dataset'
+        path = '/home/vde/face_clustering/dataset'
         imagePaths = [os.path.join(path,f) for f in os.listdir(path)]     
         faceSamples=[]
         ids = []
@@ -31,7 +31,8 @@ class FaceTrainer():
 
     def trainNewFaces(self):
         print("Training new faces ...")
-        path = '/home/remco/Projects/face_clustering/dataset'
+        path = '/home/vde/face_clustering/dataset'
+        os.remove("/home/vde/face_clustering/face_recognition/trainer/trainer.yml")
         faces,ids = self.getImagesAndLabels(path)
         self.recognizer.train(faces, np.array(ids))
         self.recognizer.write('face_recognition/trainer/trainer.yml')

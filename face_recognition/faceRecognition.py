@@ -22,16 +22,16 @@ id = 0
 newFace = 0
 writer = None
 
-cam = cv2.VideoCapture("http://192.168.70.195:4747/video")
-cam.set(3, 50)
-cam.set(4, 50)
+cam = cv2.VideoCapture("/dev/video0")
+#cam.set(3, 50)
+#cam.set(4, 50)
 
 minW = 0.15*cam.get(3)
 minH = 0.15*cam.get(4)
 
 with open('face_recognition/trainer/trainer.yml') as trainerFile:
     try:
-        trainerFile = yaml.load(trainerFile)
+        trainerFile = yaml.safe_load(trainerFile)
         trainerFile = {} if trainerFile is None else trainerFile
         if trainerFile == {}:
             print('Trainer file is emppty. Going to save first face ...')
@@ -42,12 +42,12 @@ with open('face_recognition/trainer/trainer.yml') as trainerFile:
                     idTotal = 1
                     print("New training data loaded.")
         else:
-            _, totalIds = t.getImagesAndLabels('/home/remco/Projects/face_clustering/dataset')
+            _, totalIds = t.getImagesAndLabels('/home/vde/face_clustering/dataset')
             idTotal = totalIds[-1] + 1
     except yaml.YAMLError as exc:
         pass
 
-_, totalIds = t.getImagesAndLabels('/home/remco/Projects/face_clustering/dataset')
+_, totalIds = t.getImagesAndLabels('/home/vde/face_clustering/dataset')
 
 if totalIds == []:
     idTotal = 0
@@ -88,7 +88,7 @@ while True:
             id = "onbekend"
             confidence = "  {0}%".format(round(100 - confidence))
             newFace += 1
-            if newFace >= 8:
+            if newFace >= 20:
                 if s.saveFace(idTotal, cam) == True:
                     newFace = 0
                     if t.trainNewFaces() == True:

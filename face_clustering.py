@@ -44,6 +44,7 @@ for index in range(len(labels)):
     file_path = os.path.join(output_folder_path, "face." + str(labels[index]))
     dlib.save_face_chip(img, shape, file_path, size=150, padding=0.25)
 
+print("Moving files")
 for i in glob.glob(os.path.join(faces_folder_path, "*.jpg")):
     os.remove(i)
 
@@ -52,3 +53,4 @@ for files in files_to_move:
     file_name = os.path.join(output_folder_path, files)
     if os.path.isfile(file_name):
         shutil.copy(file_name, faces_folder_path)
+print("Done moving files")

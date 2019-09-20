@@ -20,7 +20,7 @@ class FaceSaver():
                 cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)
                 self.count += 1
 
-                cv2.imwrite("/home/remco/Projects/face_clustering/dataset/User." + str(faceID) + '.' + str(self.count) + ".jpg", img[y:y+h,x:x+w])
+                cv2.imwrite("/home/vde/face_clustering/dataset/User." + str(faceID) + '.' + str(self.count) + ".jpg", img[y:y+h,x:x+w])
                 #cv2.imwrite("dataset/User." + str(faceID) + ".jpg", img[y:y+h,x:x+w])
                 cv2.imshow('camera', img)
 
